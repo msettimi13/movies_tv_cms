@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies API with AJAX</title>
+</head>
+<body>
+    <main id="app">
+        <header>
+            <h2>This content could be your nav</h2>
+            <ul class="filterNav">
+                <li>
+                    <a @click.prevent="filterMovies('action')" href="">Action</a>
+                </li>
+                <li>
+                    <a @click.prevent="filterMovies('comedy')" href="">Comedy</a>
+                </li>
+                <li>
+                    <a @click.prevent="filterMovies('family')" href="">Family</a>
+                </li>
+                <li>
+                    <a @click.prevent="filterMovies('drama')" href="">Drama</a>
+                </li>
+                <li>
+                    <a @click.prevent="filterMovies('all')" href="">All</a>
+                </li>
+            </ul>
+        </header>
+
+        <section>
+            <moviethumb v-for="(item, index) in filteredMovies" :key="index" :movie="item"></moviethumb>
+        </section>
+    </main>
+
+    <script defer type="module" src="js.main.js"></script>
+</body>
+</html>
